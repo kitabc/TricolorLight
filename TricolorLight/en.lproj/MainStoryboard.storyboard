@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="O95-fP-yZF">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - TricolorLight-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="S3H-ok-DQS">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KX4-rD-6tK">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="IMZ-Oo-Tb5" kind="push" identifier="TXRX" id="8lz-Gm-g9I"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="fXc-gC-lmg"/>
+                                    <outlet property="delegate" destination="2" id="FnC-6e-mx7"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="b0u-3N-DET"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S3H-ok-DQS" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Cw7-cW-fnB"/>
+                            <constraint firstItem="S3H-ok-DQS" firstAttribute="centerX" secondItem="b0u-3N-DET" secondAttribute="centerX" type="default" id="Kvn-vq-4qI"/>
+                            <constraint firstItem="S3H-ok-DQS" firstAttribute="centerY" secondItem="b0u-3N-DET" secondAttribute="centerY" type="default" id="TjA-XH-ZNI"/>
+                            <constraint firstItem="S3H-ok-DQS" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="dDp-kt-Rwb"/>
+                            <constraint firstItem="S3H-ok-DQS" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="h6K-cN-TLo"/>
+                            <constraint firstItem="S3H-ok-DQS" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="oux-3z-l7L"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="TricolorLight" id="MBB-af-ylM">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="G0e-UB-EyE">
+                            <connections>
+                                <action selector="doSearchDev:" destination="2" id="nM5-mt-GYM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="gDevView" destination="S3H-ok-DQS" id="TGz-nb-WZ4"/>
+                        <outlet property="myIndicator" destination="b0u-3N-DET" id="4nv-hG-uRf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647" y="3"/>
+        </scene>
+        <!--View Controller - LightControl-->
+        <scene sceneID="C8b-nt-PI8">
+            <objects>
+                <viewController storyboardIdentifier="" id="IMZ-Oo-Tb5" customClass="TXRXViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NFR-qJ-Xlf">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lE0-Dq-4Bn">
+                                <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="doLedSliderChanged:" destination="IMZ-Oo-Tb5" eventType="valueChanged" id="2rV-ry-doE"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="flj-nk-VKs">
+                                <color key="minimumTrackTintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="doLedSliderChanged:" destination="IMZ-Oo-Tb5" eventType="valueChanged" id="frx-q3-6v7"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="x7v-Sh-dgh">
+                                <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="doLedSliderChanged:" destination="IMZ-Oo-Tb5" eventType="valueChanged" id="TZ5-eV-AxY"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-9y-C67">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Save to Board">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doSaveToBoard:" destination="IMZ-Oo-Tb5" eventType="touchUpInside" id="V9D-t8-4Wu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoW-M4-wbm">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="cQU-ZU-8Fd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Clean Config">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doCleanConfig:" destination="IMZ-Oo-Tb5" eventType="touchUpInside" id="qZW-hH-JFi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lE0-Dq-4Bn" firstAttribute="leading" secondItem="NFR-qJ-Xlf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4wt-cY-3xU"/>
+                            <constraint firstItem="x7v-Sh-dgh" firstAttribute="top" secondItem="NFR-qJ-Xlf" secondAttribute="top" constant="158" id="C6t-yy-twr"/>
+                            <constraint firstAttribute="trailing" secondItem="eoW-M4-wbm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="DX7-Fa-z7K"/>
+                            <constraint firstAttribute="trailing" secondItem="x7v-Sh-dgh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="EiJ-Mb-3cJ"/>
+                            <constraint firstItem="lE0-Dq-4Bn" firstAttribute="top" secondItem="NFR-qJ-Xlf" secondAttribute="top" constant="27" id="X4W-eY-wcI"/>
+                            <constraint firstItem="x7v-Sh-dgh" firstAttribute="leading" secondItem="NFR-qJ-Xlf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YLE-3s-4dY"/>
+                            <constraint firstAttribute="trailing" secondItem="flj-nk-VKs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="biI-0T-InQ"/>
+                            <constraint firstItem="oeV-9y-C67" firstAttribute="leading" secondItem="NFR-qJ-Xlf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fu0-Dc-gJ2"/>
+                            <constraint firstItem="flj-nk-VKs" firstAttribute="top" secondItem="NFR-qJ-Xlf" secondAttribute="top" constant="95" id="g2S-iP-wB4"/>
+                            <constraint firstAttribute="trailing" secondItem="lE0-Dq-4Bn" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hPg-Ln-dID"/>
+                            <constraint firstItem="flj-nk-VKs" firstAttribute="leading" secondItem="NFR-qJ-Xlf" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hmm-Lc-Bbj"/>
+                            <constraint firstItem="oeV-9y-C67" firstAttribute="top" secondItem="NFR-qJ-Xlf" secondAttribute="top" constant="215" id="pzY-an-j8o"/>
+                            <constraint firstItem="eoW-M4-wbm" firstAttribute="baseline" secondItem="oeV-9y-C67" secondAttribute="baseline" type="default" id="zt5-UN-WJJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="LightControl" id="4cb-Rm-emi">
+                        <barButtonItem key="rightBarButtonItem" title="RSSI" id="0mp-od-faB">
+                            <connections>
+                                <action selector="doDisconnect:" destination="IMZ-Oo-Tb5" id="KBJ-V5-RE4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="gBle_LED_BSlider" destination="x7v-Sh-dgh" id="ZhS-RP-SV2"/>
+                        <outlet property="gBle_LED_GSlider" destination="flj-nk-VKs" id="18l-yw-kSQ"/>
+                        <outlet property="gBle_LED_RSlider" destination="lE0-Dq-4Bn" id="slT-9p-Gn3"/>
+                        <outlet property="gNavigationBar" destination="4cb-Rm-emi" id="mI6-0Q-KdH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1s-BX-Muq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1075" y="3"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eUs-MG-cEy">
+            <objects>
+                <navigationController id="O95-fP-yZF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qeK-fo-4El">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="xDz-QP-EI5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xH1-09-zdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="248" y="3"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
